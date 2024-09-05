@@ -8,6 +8,7 @@ int main() {
 	int pageNumber = 1;
 
 	// Build the command using the start command and Adobe Reader arguments
+	// tamaño del char
 	char command[512];
 	snprintf(command, sizeof(command), "start \"\" \"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe\" /A \"page=%d\" \"%s\"", pageNumber, pdfFile);
 
