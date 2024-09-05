@@ -21,7 +21,9 @@ int main() {
 
 
 	do{
-		
+		// BORRAR CMD
+		system("CLS");
+
 		std::cout << "****    Bienvenido al proyecto    *****"<<endl;
 		std::cout << "¿ En que idioma desea continuar ?"<<endl;
 		std::cout << "1. Español "<<endl;
@@ -35,6 +37,7 @@ int main() {
 		switch(op_idiomas) { 
 			case 1:
 			do{
+				system("CLS");
 				std::cout << "Bienvenido al Programa en Español"<<endl;
 				std::cout << "    Elije una opcion " <<endl;
 				std::cout << "1. Revista: Nube de Firewall " <<endl;
@@ -53,6 +56,7 @@ int main() {
 					case 1: 
 						// DO = SI CONDICIONAL
 						do{
+							system("CLS");
 							std::cout << "Bienvenido a  Nube de Firewall "<<endl;
 							std::cout << " Escoge una opcion " <<endl;
 							std::cout << "1. Portada " <<endl;
@@ -131,8 +135,9 @@ int main() {
 				break;
 			// salir del programa
 			case 3: 
+				system("CLS");
 				std::cout << "Saliendo del programa..." << endl;
-        	return 0;
+        		return 0;
       		default:
 	  			std::cout << "Opcion invalida. Intentelo nuevamente." << endl;
 	 	} 	
