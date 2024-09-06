@@ -41,13 +41,20 @@ void menu_revista_es(){
 		std::cout << "9. Volver al menu principal" <<endl;
 		std::cout << endl;
 	}
-void mostrar_pdf(){
+//funcion abrir pdf	
+void mostrar_pdf(int pageNumber){
 	const char* pdfFile = "C:\\Users\\isis0\\Documents\\ARTICULOS\\cc.pdf";  // Ruta de pdf para abrir
-	// Numero de pagina donde se abrira
-	int pageNumber = 2;
 	// tamaño del char
 	char command[512];
-	snprintf(command, sizeof(command), "start \"\" \"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe\" /A \"page=%d\" \"%s\"", pageNumber, pdfFile);
+	snprintf(command, sizeof(command), "start \"\" \"C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe\" /A \"page=%d\" \"%s\"", pageNumber, pdfFile);
+	system(command);
+}
+
+void abrir_video(){
+	const char* videoFile = "C:\\Users\\isis0\\Documents\\ARTICULOS\\video.mp4";  
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", videoFile);
 	system(command);
 }
 
@@ -59,17 +66,16 @@ int main() {
 	// Variables menu idiomas
 
 	int op_idiomas;
-	bool volver_menu_principal = false;
+	bool volver_menu_principal = false; // valor logico falso
 	bool volver_menu_idiomas = false;
-
-
 
 	//Variables menu principal español 
 	int	op_menu_principal;
-	//Variable sub menu revista
 
+	//Variable sub menu revista
 	int op_menu_revista;
 
+	//conectivo logico
 	do{
 		// BORRAR CMD
 		system("CLS");
@@ -96,31 +102,31 @@ int main() {
 								
 								switch (op_menu_revista){
 									case 1: 
-										mostrar_pdf();
+										mostrar_pdf(1);
 										break;
 									case 2: 
-										std::cout << " Mostrar indice " <<endl;
+										mostrar_pdf(2);
 										break;
 									case 3: 
-										std::cout << " Mostrar editorial " <<endl;
+										mostrar_pdf(1);
 										break;
 									case 4: 
-										std::cout << " Mostrar art. ciberseguridad " <<endl;
+										mostrar_pdf(1);
 										break;
 									case 5: 
-										std::cout << " Mostrar ar. La IA  " <<endl;
+										mostrar_pdf(1);
 										break;
 									case 6: 
-										std::cout << " Mostrar art. Algoritmos " <<endl;
+										mostrar_pdf(1);
 										break;
 									case 7: 
-										std::cout << " Mostrar 8 maneras de " <<endl;
+										mostrar_pdf(1);
 										break;
 									case 8: 
-										std::cout << " Mostar seccion de entrenimiento " <<endl;
+										mostrar_pdf(1);
 										break;
 									case 9: 
-										volver_menu_principal = true;
+										volver_menu_principal = true; //valor logico verdadero
 										break;
 									default:
 										std::cout << "opción invalida. Intente nuevamente." << endl;
@@ -137,7 +143,7 @@ int main() {
 						std::cout << " calculadora " <<endl;
 						break;
 					case 4 :
-						std::cout << " link videos " <<endl;
+						abrir_video();
 						break;
 					case 5 :
 						std::cout << " Creditos " <<endl;
