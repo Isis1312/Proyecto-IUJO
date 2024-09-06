@@ -58,6 +58,15 @@ void abrir_video(){
 	snprintf(command, sizeof(command), "start \"\" \"%s\"", videoFile);
 	system(command);
 }
+
+// abrir juego ESPAÑOL
+void abrir_juego_es(){
+	const char* file = "juego.exe";  
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", file);
+	system(command);
+}
 // FUNCIONES MENU INGLES
 void menu_principal_in(){
 	std::cout << "Welcome to the Program in English" << std::endl;
@@ -103,7 +112,7 @@ void abrir_video_in(){
 	snprintf(command, sizeof(command), "start \"\" \"%s\"", videoFile);
 	system(command);
 }
-
+// abrir calculadora ingles
 void abrir_calcu_in(){
 	const char* file = "calculadorain.exe";  
 	// tamaño del char
@@ -218,7 +227,7 @@ int main() {
 						std::cout << " Creditos " <<endl;
 						break;
 					case 6 :
-						cout<< " Juego " <<endl;
+						abrir_juego_es();
 						break;
 					case 7 :
 						volver_menu_idiomas = true;
