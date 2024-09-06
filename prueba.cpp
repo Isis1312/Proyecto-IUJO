@@ -104,6 +104,15 @@ void abrir_video_in(){
 	system(command);
 }
 
+void abrir_calcu_in(){
+	const char* file = "calculadorain.exe";  
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", file);
+	system(command);
+}
+
+
 int main() {
 
 	// comando acentos y Ñ
@@ -187,7 +196,9 @@ int main() {
 										volver_menu_principal = true; //valor logico verdadero
 										break;
 									default:
+										system("CLS");
 										std::cout << "opción invalida. Intente nuevamente." << endl;
+										system("pause");
 								}		
 				
 						// ! negacion 
@@ -213,7 +224,9 @@ int main() {
 						volver_menu_idiomas = true;
 						break;	
 					default:
+					system("CLS");
 					std::cout << "Opción invalida. Intentelo nuevamente." << endl;
+					system("pause");
 				}	
 
 			}while (!volver_menu_idiomas);
@@ -272,7 +285,7 @@ int main() {
 						std::cout << " Ayuda al sistema " <<endl;
 						break;
 					case 3 :
-						std::cout << " calculadora " <<endl;
+						abrir_calcu_in();
 						break;
 					case 4 :
 						abrir_video_in();
@@ -287,7 +300,10 @@ int main() {
 						volver_menu_idomas_in = true;
 						break;
 					default:
+					system("CLS");
 					std::cout << "Invalid option. Please try again.." << endl;
+					system("pause");
+			
 				}						
 
 			} while (!volver_menu_idomas_in);
@@ -299,7 +315,9 @@ int main() {
 				std::cout << "Saliendo del programa..." << endl;
         		return 0;
       		default:
+				system("CLS");
 	  			std::cout << "Opción invalida. Intentelo nuevamente." << endl;
+				system("pause");
 	 	} 	
 	} while (true);
 
