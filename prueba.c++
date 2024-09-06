@@ -1,10 +1,14 @@
 #include <iostream>
-
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
 int main() {
-	
+
+	// comando acentos y Ñ
+	system("chcp 65001");
+
 	// Variables menu idiomas
 
 	int op_idiomas;
@@ -29,7 +33,7 @@ int main() {
 		std::cout << "1. Español "<<endl;
 		std::cout << "2. Ingles "<<endl;
 		std::cout << "3. Salir "<<endl;   
-		std::cout << "Ingrese una opcion: ";      
+		std::cout << "Ingrese una opción: ";      
 		std::cin >> op_idiomas;
 		
 		// Menu principal español
@@ -39,7 +43,7 @@ int main() {
 			do{
 				system("CLS");
 				std::cout << "Bienvenido al Programa en Español"<<endl;
-				std::cout << "    Elije una opcion " <<endl;
+				std::cout << "    Elije una opción " <<endl;
 				std::cout << "1. Revista: Nube de Firewall " <<endl;
 				std::cout << "2. Ayuda al sistema " <<endl;
 				std::cout << "3. Calculadora de algoritmos" <<endl;
