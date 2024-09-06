@@ -137,7 +137,7 @@ int main() {
     } while (opcion2 == 's' or opcion2 == 'S');
     
     cout << endl;
-    cout << "Gracias por haber iniciado el programa :D"<<endl;
+    cout << "Gracias por haber iniciado el programa"<<endl;
     cout << endl;
 
     return 0;
