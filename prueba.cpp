@@ -23,13 +23,13 @@ void menu_principal_es()
 	std::cout << "1. Revista: Nube de Firewall " << endl;
 	std::cout << "2. Ayuda al sistema " << endl;
 	std::cout << "3. Calculadora de algoritmos" << endl;
-	std::cout << "4. Link a los videos de los integrantes" << endl;
-	std::cout << "5. Creditos" << endl;
+	std::cout << "4. Video explicativo." << endl;
+	std::cout << "5. Créditos" << endl;
 	std::cout << "6. Juego: EL AHORCADO" << endl;
-	std::cout << "7. Volver al menu de idiomas" << endl;
+	std::cout << "7. Volver al menú de idiomas" << endl;
 	std::cout << "Ingrese una opción: ";
-	std::cout << endl;
 }
+
 void menu_revista_es()
 {
 	std::cout << "Bienvenido a  Nube de Firewall " << endl;
@@ -43,12 +43,11 @@ void menu_revista_es()
 	std::cout << "7. artículo: 8 maneras de mejorar tu ciberseguridad" << endl;
 	std::cout << "8. Seccion de entretenimeinto" << endl;
 	std::cout << "9. Volver al menu principal" << endl;
-	std::cout << endl;
 }
 // funcion abrir pdf	ESPAÑOL
 void mostrar_pdf(int pageNumber)
 {
-	const char *pdfFile = "C:\\Users\\isis0\\Documents\\ARTICULOS\\cc.pdf"; // Ruta de pdf para abrir
+	const char *pdfFile = "..\\recursos\\cc.pdf"; // Ruta de pdf para abrir
 	// tamaño del char
 	char command[512];
 	snprintf(command, sizeof(command), "start \"\" \"C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe\" /A \"page=%d\" \"%s\"", pageNumber, pdfFile);
@@ -57,7 +56,7 @@ void mostrar_pdf(int pageNumber)
 // VIDEO ESPAÑOL
 void abrir_video()
 {
-	const char *videoFile = "C:\\Users\\isis0\\Documents\\ARTICULOS\\video.mp4";
+	const char *videoFile = "..\\recursos\\video.mp4";
 	// tamaño del char
 	char command[512];
 	snprintf(command, sizeof(command), "start \"\" \"%s\"", videoFile);
@@ -73,6 +72,24 @@ void abrir_juego_es()
 	snprintf(command, sizeof(command), "start \"\" \"%s\"", file);
 	system(command);
 }
+// abrir ayuda al sistema español
+void pdf_ayuda_es(){
+	const char *ayudaFile = "..\\recursos\\ayuda_al_sistema_es.docx"; // Ruta de pdf para abrir
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", ayudaFile);
+	system(command);
+}
+//abrir calculadora español
+void abrir_calcu_es()
+{
+	const char *file = "calculadora_es.exe";
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", file);
+	system(command);
+}
+
 // FUNCIONES MENU INGLES
 void menu_principal_in()
 {
@@ -81,12 +98,11 @@ void menu_principal_in()
 	std::cout << "1. Magazine: Firewall Cloud " << std::endl;
 	std::cout << "2. System Help " << std::endl;
 	std::cout << "3. Algorithm Calculator" << std::endl;
-	std::cout << "4. Link to team member videos" << std::endl;
+	std::cout << "4. Explanatory video" << std::endl;
 	std::cout << "5. Credits" << std::endl;
 	std::cout << "6. Game: THE HANGMAN" << std::endl;
 	std::cout << "7. Return to the language menu" << std::endl;
 	std::cout << "Enter an option: ";
-	std::cout << std::endl;
 }
 
 void revista_menu_in()
@@ -102,12 +118,11 @@ void revista_menu_in()
 	std::cout << "7. Article: 8 Ways to Improve Your Cybersecurity" << std::endl;
 	std::cout << "8. Entertainment Section" << std::endl;
 	std::cout << "9. Return to the main menu" << std::endl;
-	std::cout << std::endl;
 }
 // funcion abrir pdf	INGLES
 void mostrar_pdf_in(int pageNumber)
 {
-	const char *pdfFile = "C:\\Users\\isis0\\Documents\\ARTICULOS\\pp.pdf"; // Ruta de pdf para abrir
+	const char *pdfFile = "..\\recursos\\cc.pdf"; // Ruta de pdf para abrir
 	// tamaño del char
 	char command[512];
 	snprintf(command, sizeof(command), "start \"\" \"C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe\" /A \"page=%d\" \"%s\"", pageNumber, pdfFile);
@@ -116,7 +131,7 @@ void mostrar_pdf_in(int pageNumber)
 // VIDEO INGLES
 void abrir_video_in()
 {
-	const char *videoFile = "C:\\Users\\isis0\\Documents\\ARTICULOS\\video.mp4";
+	const char *videoFile = "..\\recursos\\video.mp4";
 	// tamaño del char
 	char command[512];
 	snprintf(command, sizeof(command), "start \"\" \"%s\"", videoFile);
@@ -125,12 +140,29 @@ void abrir_video_in()
 // abrir calculadora ingles
 void abrir_calcu_in()
 {
-	const char *file = "calculadorain.exe";
+	const char *calcu_in = "calculadora_in.exe";
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", calcu_in);
+	system(command);
+}
+// abrir ayuda al sistema ingles
+void pdf_ayuda_in(){
+	const char *pdfFile = "..\\recursos\\ayuda_al_sistema_in.docx"; 
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"%s\"", pdfFile);
+	system(command);
+}
+// abrir juego ingles
+void abrir_juego_in()
+{
+	const char *file = "juego_in.exe";
 	// tamaño del char
 	char command[512];
 	snprintf(command, sizeof(command), "start \"\" \"%s\"", file);
 	system(command);
-}
+}	
 
 int main()
 {
@@ -232,10 +264,10 @@ int main()
 					break;
 
 				case 2:
-					std::cout << " Ayuda al sistema " << endl;
+					pdf_ayuda_es();
 					break;
 				case 3:
-					std::cout << " calculadora " << endl;
+					abrir_calcu_es();
 					break;
 				case 4:
 					abrir_video();
@@ -311,7 +343,7 @@ int main()
 					break;
 
 				case 2:
-					std::cout << " Ayuda al sistema " << endl;
+					pdf_ayuda_in();
 					break;
 				case 3:
 					abrir_calcu_in();
@@ -323,7 +355,7 @@ int main()
 					std::cout << " Creditos " << endl;
 					break;
 				case 6:
-					cout << " Juego " << endl;
+					abrir_juego_in();
 					break;
 				case 7:
 					volver_menu_idomas_in = true;
