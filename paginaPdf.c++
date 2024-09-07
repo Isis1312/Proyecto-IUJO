@@ -14,5 +14,13 @@ int main() {
 	// Execute the command
 	system(command);
 }
-
+// funcion abrir pdf	ESPAÑOL
+void mostrar_pdf(int pageNumber)
+{
+	const char *pdfFile = "..\\recursos\\cc.pdf"; // Ruta de pdf para abrir
+	// tamaño del char
+	char command[512];
+	snprintf(command, sizeof(command), "start \"\" \"C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe\" /A \"page=%d\" \"%s\"", pageNumber, pdfFile);
+	system(command);
+}
 
