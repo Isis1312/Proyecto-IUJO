@@ -3,36 +3,36 @@
 
 using namespace std;
 
-// Function to calculate logarithm with a specified base
+
 double logBase(double a, double base) {
     if (base <= 0) {
         cerr << "Error: The base must be a positive number." <<endl;
-        return NAN; // Return Not a Number if the base is invalid
+        return NAN; // 
     }
     return log(a) / log(base);
 }
 
-// Function to calculate logarithm with a root as base
+
 double logRoot(double a, double root) {
     if (root <= 0) {
         cerr << "Error: The root must be a positive number." <<endl;
-        return NAN; // Return Not a Number if the root is invalid
+        return NAN; 
     }
     return logBase(a, pow(root, 1.0 / root));
 }
 
-// Function to calculate logarithm with a fraction as base
+
 double logFraction(double a, double nume, double deno) {
     if (deno == 0) {
         cerr << "Error: The denominator cannot be zero." <<endl;
-        return NAN; // Return Not a Number if the denominator is zero
+        return NAN; 
     }
     return logBase(a, nume / deno);
 }
 
 int main (){
     
-    char response;
+    char respuesta;
     int option;
     double x;
     double base;
@@ -40,7 +40,8 @@ int main (){
     double deno;
     double root;
     double result;
-     
+    bool respuesta_valida = false;
+
     do{
         cout << "Welcome to the logarithm calculator" <<endl;
         cout << "1. Calculate logarithm with a specified base" <<endl;
@@ -86,8 +87,18 @@ int main (){
         cout << endl;
         
         cout << "Would you like to run the calculator again? (y/n): ";
-        cin >> response;
-    }while  (response == 'y' || response == 'Y');
+        cin >> respuesta;
+            while (!respuesta_valida) {
+            if (respuesta == 'y' || respuesta == 'Y' || respuesta == 'n' || respuesta == 'N') {
+                respuesta_valida = true;
+            } else {
+                std::cout << "Answer not valid. Please enter 'y' or 'n': ";
+                std::cin >> respuesta;
+            }
+        }
+
+        respuesta_valida = false; 
+    } while (respuesta == 'y' || respuesta == 'Y');
      
     cout << endl;
     cout << "Thank you for using our calculator";
