@@ -44,6 +44,7 @@ int main() {
     char respuesta;
     int opcion;
     double x, base, nume, deno, root, resultado;
+    bool respuesta_valida = false;
 
     do {
         limpiarPantalla();  // Limpiar la pantalla antes de mostrar el menu
@@ -80,8 +81,8 @@ int main() {
                 break;
 
             case 3:
-                cout << "Opci�n seleccionada: Calcular logaritmo con una fraccion como base" << endl;
-                cout << "Ingrese un n�mero: ";
+                cout << "Opción seleccionada: Calcular logaritmo con una fraccion como base" << endl;
+                cout << "Ingrese un número: ";
                 cin >> x;
                 cout << "Ingrese un numerador: ";
                 cin >> nume;
@@ -93,7 +94,7 @@ int main() {
                 break;
 
             default:
-                cout << "ERROR! Esta opcion no est� disponible." << endl;
+                cout << "ERROR! Esta opcion no esta disponible." << endl;
                 break;
         }
 
@@ -101,7 +102,17 @@ int main() {
         cout << "Desea volver a ejecutar la calculadora? (s/n): ";
         cin >> respuesta;
 
-    } while (respuesta == 's');  // Solo sigue si el usuario ingresa 's'
+          while (!respuesta_valida) {
+            if (respuesta == 's' || respuesta == 'S' || respuesta == 'n' || respuesta == 'N') {
+                respuesta_valida = true;
+            } else {
+                std::cout << "Respuesta no valida. Por favor, ingrese 's' o 'n': ";
+                std::cin >> respuesta;
+            }
+        }
+
+        respuesta_valida = false; 
+    } while (respuesta == 's' || respuesta == 'S');
 
     limpiarPantalla();
     cout << "Gracias por utilizar nuestra calculadora" << endl;

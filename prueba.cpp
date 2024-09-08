@@ -273,10 +273,10 @@ int main()
 					abrir_video();
 					break;
 				case 5:
-					std::cout << " Creditos " << endl;
+					abrir_juego_es();
 					break;
 				case 6:
-					abrir_juego_es();
+					std::cout << " Creditos " << endl;
 					break;
 				case 7:
 					volver_menu_idiomas = true;
@@ -352,10 +352,10 @@ int main()
 					abrir_video_in();
 					break;
 				case 5:
-					std::cout << " Creditos " << endl;
+					abrir_juego_in();
 					break;
 				case 6:
-					abrir_juego_in();
+					std::cout << " Creditos " << endl;
 					break;
 				case 7:
 					volver_menu_idomas_in = true;
